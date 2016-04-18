@@ -1,0 +1,38 @@
+import win32gui
+import win32ui
+import win32con
+
+import getUserResolution
+
+user_H_W =  getUserResolution.getUserResolution()
+
+h = 1280
+w = 800
+
+d = (user_H_W[0]-1280)//2
+dd = (user_H_W[1]-800)//2
+
+
+
+
+
+print (h,w)
+
+
+
+hwnd = win32gui.FindWindow(None, "PVP.Net 클라이언트")
+print(hwnd)
+win32gui.SetWindowPos(hwnd,win32con.HWND_NOTOPMOST,d,dd,1280,800,0)
+wDC = win32gui.GetWindowDC(hwnd)
+dcObj=win32ui.CreateDCFromHandle(wDC)
+cDC=dcObj.CreateCompatibleDC()
+dataBitMap = win32ui.CreateBitmap()
+dataBitMap.CreateCompatibleBitmap(dcObj, h,w)
+cDC.SelectObject(dataBitMap)
+cDC.BitBlt((0,0),(h, w) , dcObj, (0,0), win32con.SRCCOPY)
+dataBitMap.SaveBitmapFile(cDC, "123.png")
+# Free Resources
+dcObj.DeleteDC()
+#cDC.DeleteDC()
+win32gui.ReleaseDC(hwnd, wDC)
+win32gui.DeleteObject(dataBitMap.GetHandle())
