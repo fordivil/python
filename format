@@ -1,0 +1,18 @@
+1. 파이썬 2.7.1 64 비트 설치
+2. 파이참 2016 설치
+3. 프레임워크 2015설치 (롤떄매)
+4. 파이썬 윈도우 환경변수 지정 -> 시스템 -> 고급시스템설정 -> path -> 새로만들기 -> 파이썬경로입력
+5. comdo,avast 백신프로그램 설치
+6. pip 업글레이드 -> python -m pip install -U pip
+7. pywin32 설치 -> https://pypi.python.org/pypi/pypiwin32 -> 64비트 -> python -m pip install pypiwin32-219-cp27-none-win_amd64.whl (win32gui)
+8. numpy설치 -> python -m pip install numpy -> opencv용
+9. opencv 설치 -> exe 설치후 \build\python\2.7\x86\cv2.pyd ->C:\Python27\Lib\site-packages    https://sourceforge.net/projects/opencvlibrary/?source=typ_redirect
+10. pillow설치 -> python -m pip install pillow
+11. 소스트리설치
+12. https://bitbucket.org/3togo/python-tesseract/overview 트리에서 복제다운
+
+14. swig 설치후 디텍토리 c로옴기고 환경변수 설정
+15, 파이썬용 c컴파일러 다운 -> https://www.microsoft.com/en-us/download/confirmation.aspx?id=44266 설치
+16. vcvarsall.bat 위치 C:\Users\vlfgh\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0 ->
+C:\Python27\Lib\distutils\msvc9compiler.­py -> vcvarsall = find_vcvarsall(version)
+-> vcvarsall= "C:/Users/vlfgh/AppData/Local/Programs/Common/Microsoft/Visual C++ for Python/9.0/vcvarsall.bat"
