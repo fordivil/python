@@ -16,3 +16,12 @@
 16. vcvarsall.bat 위치 C:\Users\vlfgh\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0 ->
 C:\Python27\Lib\distutils\msvc9compiler.­py -> vcvarsall = find_vcvarsall(version)
 -> vcvarsall= "C:/Users/vlfgh/AppData/Local/Programs/Common/Microsoft/Visual C++ for Python/9.0/vcvarsall.bat"
+17. 
+src/tesseract_wrap.cpp
+
+SWIGINTERN PyObject *Swig_var_kPolyBlockNames_get(void) {
+  PyObject *pyobj = 0;
+  
+  //pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(kPolyBlockNames), SWIGTYPE_p_p_char,  0 );
+  return 0;
+}
