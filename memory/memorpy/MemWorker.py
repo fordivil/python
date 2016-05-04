@@ -72,7 +72,27 @@ class MemWorker(object):
     def umem_search(self, regex):
         """ like mem_search but works with unicode strings """
         regex = utils.re_to_unicode(regex)
+        print(self.start_offset)
+        print(self.end_offset)
         for i in self.mem_search(str(regex), ftype='re'):
+            yield i
+
+    def umem_search2(self, regex):
+        """ like mem_search but works with unicode strings """
+        regex = utils.re_to_unicode(regex)
+        for i in self.mem_search(str(regex), ftype='re', protec='',start_offset=self.start_offset+30000000,end_offset=self.end_offset-1500000000):
+            yield i
+
+    def umem_search3(self, regex):
+        """ like mem_search but works with unicode strings """
+        regex = utils.re_to_unicode(regex)
+        for i in self.mem_search(str(regex), ftype='re', protec='',start_offset=self.start_offset+60000000,end_offset=self.end_offset-1500000000):
+            yield i
+
+    def umem_search4(self, regex):
+        """ like mem_search but works with unicode strings """
+        regex = utils.re_to_unicode(regex)
+        for i in self.mem_search(str(regex), ftype='re', protec='',start_offset=self.start_offset+90000000,end_offset=self.end_offset-1500000000):
             yield i
 
     def group_search(self, group, start_offset = None, end_offset = None):

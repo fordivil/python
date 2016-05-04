@@ -1,0 +1,16 @@
+import ctypes
+user32 = ctypes.windll.user32
+gdi32 = ctypes.windll.gdi32
+
+screensize = (user32.GetSystemMetrics(0), user32.GetSystemMetrics(1))
+#print ("screensize =%s"%(str(screensize)))
+dc = user32.GetDC(None);
+
+screensize = (gdi32.GetDeviceCaps(dc,8), gdi32.GetDeviceCaps(dc,10), gdi32.GetDeviceCaps(dc,12))
+#print ("screensize =%s"%(str(screensize)))
+
+def getUserResolution():
+    #screensize = (gdi32.GetDeviceCaps(dc,118), gdi32.GetDeviceCaps(dc,117), gdi32.GetDeviceCaps(dc,12))
+    screensize = (user32.GetSystemMetrics(0), user32.GetSystemMetrics(1))
+    #print ("screensize =%s"%(str(screensize)))
+    return screensize
